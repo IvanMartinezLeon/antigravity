@@ -342,6 +342,8 @@ Si falta cualquier archivo esencial, detén el flujo e informa específicamente 
 **Acción:**
 ```bash
 flutter pub get
+# Verificar y actualizar a últimas versiones mayores
+flutter pub upgrade --major-versions
 ```
 
 **Validaciones:**
@@ -361,6 +363,7 @@ Detén el workflow y muestra el error específico. Sugiere revisar versión de F
 - Detección automática de idioma del dispositivo
 - Estructura de proyecto completa y validada
 - Dependencias instaladas correctamente
+- Limpiar comentarios del código
 
 **Mensaje final obligatorio del agente:**  
 ```

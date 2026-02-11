@@ -342,6 +342,8 @@ If any essential file is missing, stop the flow and inform specifically which el
 **Action:**
 ```bash
 flutter pub get
+# Check and upgrade to latest major versions
+flutter pub upgrade --major-versions
 ```
 
 **Validations:**
@@ -361,6 +363,7 @@ Stop the workflow and show the specific error. Suggest checking Flutter version 
 - Automatic device language detection
 - Full and validated project structure
 - Dependencies installed correctly
+- Clean code comments
 
 **Mandatory final agent message:**  
 ```
