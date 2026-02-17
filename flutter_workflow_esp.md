@@ -314,7 +314,50 @@ class SettingsScreen extends StatelessWidget {
 }
 ```
 
-### 5. Validación de Estructura Completa
+### 5. Principios de Arquitectura Limpia (Antigravity)
+
+**Acciones obligatorias:**
+
+1. **Estructura orientada a Features:**
+   ```bash
+   mkdir -p lib/features/<feature_name>/presentation/{widgets,screens}
+   mkdir -p lib/features/<feature_name>/domain/{entities,repositories}
+   mkdir -p lib/features/<feature_name>/data/{repositories,datasources}
+   ```
+
+2. **Reglas del Contrato:**
+   - **Aislamiento:** Las features no dependen entre sí directamente.
+   - **Punto de Entrada:** Cada feature expone un archivo `public_api.dart`.
+   - **Composition Root:** El wiring ocurre solo en `main.dart` o un `injection_container.dart`.
+
+3. **Gestión de Estado:**
+   - Usar `flutter_bloc` / `cubit` para lógica de negocio.
+   - No instanciar Blocs dentro de otras features.
+
+### 6. Software Sostenible (Green Software & SCI)
+
+**Misión:** Minimizar la huella de carbono mediante eficiencia energética y hardware.
+
+1. **Cálculo del SCI (Software Carbon Intensity):**
+   La métrica para evaluar la sostenibilidad del software es:
+   > **SCI = ((E * I) + M) / R**
+   - **E:** Energía consumida (kWh).
+   - **I:** Intensidad de carbono de la red (gCO2e/kWh).
+   - **M:** Emisiones de carbono embebidas del hardware.
+   - **R:** Unidad funcional (ej: por usuario, por petición).
+
+2. **Estrategias en Flutter:**
+   - **Eficiencia Energética:**
+     - Usar `const` para evitar reconstrucciones.
+     - `RepaintBoundary` para aislar partes complejas de la UI.
+     - Evitar animaciones infinitas en segundo plano.
+   - **Eficiencia de Hardware:**
+     - Minimizar el uso de CPU/GPU procesando datos localmente solo cuando sea necesario.
+     - Reducir el tamaño del bundle para minimizar la energía de descarga (M).
+   - **Eficiencia de Datos:**
+     - Peticiones batch y caché agresiva para reducir tráfico de red.
+
+### 7. Validación de Estructura Completa
 
 **Archivos obligatorios:**
 - `pubspec.yaml` (con flutter_dotenv y easy_localization)
@@ -337,7 +380,7 @@ class SettingsScreen extends StatelessWidget {
 **Error crítico:**  
 Si falta cualquier archivo esencial, detén el flujo e informa específicamente qué elemento está ausente.
 
-### 6. Descarga y Validación de Dependencias
+### 8. Descarga y Validación de Dependencias
 
 **Acción:**
 ```bash
@@ -354,7 +397,7 @@ flutter pub upgrade --major-versions
 **Error de dependencias:**  
 Detén el workflow y muestra el error específico. Sugiere revisar versión de Flutter y compatibilidad de paquetes.
 
-### 7. Confirmación Final del Estado del Proyecto
+### 9. Confirmación Final del Estado del Proyecto
 
 **Verificaciones finales:**
 - Entorno Flutter verificado (`flutter doctor` limpio)
@@ -362,6 +405,8 @@ Detén el workflow y muestra el error específico. Sugiere revisar versión de F
 - Sistema i18n funcional con español e inglés
 - Detección automática de idioma del dispositivo
 - Estructura de proyecto completa y validada
+- Arquitectura Limpia (Antigravity) aplicada
+- Principios de Green Software e indicadores SCI listos
 - Dependencias instaladas correctamente
 - Limpiar comentarios del código
 
@@ -377,6 +422,11 @@ Entornos disponibles:
 Idiomas configurados:
   • Español (castellano) - Detectado automáticamente
   • Inglés (English) - Detectado automáticamente
+
+Sostenibilidad y Arquitectura:
+  • Contrato Antigravity 1.0.0 activo
+  • Prácticas de Green Software integradas
+  • Métricas SCI preparadas para monitorización
 
 El proyecto está listo para:
   • Desarrollo inmediato

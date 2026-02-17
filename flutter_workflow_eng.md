@@ -314,7 +314,50 @@ class SettingsScreen extends StatelessWidget {
 }
 ```
 
-### 5. Full Structure Validation
+### 5. Clean Architecture Principles (Antigravity)
+
+**Mandatory actions:**
+
+1. **Feature-Oriented Structure:**
+   ```bash
+   mkdir -p lib/features/<feature_name>/presentation/{widgets,screens}
+   mkdir -p lib/features/<feature_name>/domain/{entities,repositories}
+   mkdir -p lib/features/<feature_name>/data/{repositories,datasources}
+   ```
+
+2. **Contract Rules:**
+   - **Isolation:** Features do not depend on each other directly.
+   - **Entry Point:** Each feature exposes a `public_api.dart` file.
+   - **Composition Root:** Wiring happens only in `main.dart` or an `injection_container.dart`.
+
+3. **State Management:**
+   - Use `flutter_bloc` / `cubit` for business logic.
+   - Do not instantiate Blocs inside other features.
+
+### 6. Sustainable Software (Green Software & SCI)
+
+**Mission:** Minimize carbon footprint through energy and hardware efficiency.
+
+1. **Calculating SCI (Software Carbon Intensity):**
+   The metric to evaluate software sustainability is:
+   > **SCI = ((E * I) + M) / R**
+   - **E:** Energy consumed (kWh).
+   - **I:** Grid carbon intensity (gCO2e/kWh).
+   - **M:** Embodied hardware emissions.
+   - **R:** Functional unit (e.g., per user, per request).
+
+2. **Strategies in Flutter:**
+   - **Energy Efficiency:**
+     - Use `const` to avoid rebuilds.
+     - `RepaintBoundary` to isolate complex UI parts.
+     - Avoid infinite background animations.
+   - **Hardware Efficiency:**
+     - Minimize CPU/GPU usage by processing data locally only when necessary.
+     - Reduce bundle size to minimize download energy (M).
+   - **Data Efficiency:**
+     - Batch requests and aggressive caching to reduce network traffic.
+
+### 7. Full Structure Validation
 
 **Mandatory files:**
 - `pubspec.yaml` (with flutter_dotenv and easy_localization)
@@ -337,7 +380,7 @@ class SettingsScreen extends StatelessWidget {
 **Critical error:**  
 If any essential file is missing, stop the flow and inform specifically which element is absent.
 
-### 6. Dependency Download and Validation
+### 8. Dependency Download and Validation
 
 **Action:**
 ```bash
@@ -354,7 +397,7 @@ flutter pub upgrade --major-versions
 **Dependency error:**  
 Stop the workflow and show the specific error. Suggest checking Flutter version and package compatibility.
 
-### 7. Final Project Status Confirmation
+### 9. Final Project Status Confirmation
 
 **Final verifications:**
 - Verified Flutter environment (clean `flutter doctor`)
@@ -362,6 +405,8 @@ Stop the workflow and show the specific error. Suggest checking Flutter version 
 - Functional i18n system with Spanish and English
 - Automatic device language detection
 - Full and validated project structure
+- Clean Architecture (Antigravity) applied
+- Green Software principles and SCI indicators ready
 - Dependencies installed correctly
 - Clean code comments
 
@@ -377,6 +422,11 @@ Available environments:
 Configured languages:
   • Spanish (Castilian) - Automatically detected
   • English - Automatically detected
+
+Sustainability and Architecture:
+  • Antigravity Contract 1.0.0 active
+  • Green Software practices integrated
+  • SCI metrics ready for monitoring
 
 The project is ready for:
   • Immediate development
